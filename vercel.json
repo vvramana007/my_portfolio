@@ -1,0 +1,15 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/client",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
+}
