@@ -46,23 +46,26 @@ export function Contact() {
             href="mailto:ramana121198@gmail.com"
             className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground px-4 py-3 font-medium hover:opacity-90 transition glow-cyan"
           >
-            <Mail className="size-4" /> ramana121198@gmail.com
+            <Mail className="size-4" />
+            <span>ramana121198@gmail.com</span>
           </a>
           <a
             href="https://www.linkedin.com/in/venkata-ramana-veeraiahgari-9042b3169/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-xl border border-border bg-muted/40 px-4 py-3 font-medium hover:text-neon-cyan transition"
           >
-            <Linkedin className="size-4" /> LinkedIn
+            <Linkedin className="size-4" />
+            <span>LinkedIn — /in/venkata-ramana-veeraiahgari</span>
           </a>
           <a
             href="https://github.com/vvramana007"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-xl border border-border bg-muted/40 px-4 py-3 font-medium hover:text-neon-cyan transition"
           >
-            <Github className="size-4" /> GitHub
+            <Github className="size-4" />
+            <span>GitHub — @vvramana007</span>
           </a>
           <p className="text-xs font-mono text-muted-foreground mt-auto">
             Based in Fort Collins, Colorado · open to remote
