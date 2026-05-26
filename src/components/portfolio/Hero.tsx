@@ -72,18 +72,20 @@ export function Hero() {
             <a
               href="https://www.linkedin.com/in/venkata-ramana-veeraiahgari-9042b3169/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full glass-card neon-border px-5 py-3 text-sm font-semibold hover:text-neon-cyan transition"
             >
-              <Linkedin className="size-4" /> LinkedIn
+              <Linkedin className="size-4" />
+              <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com/vvramana007"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full glass-card neon-border px-5 py-3 text-sm font-semibold hover:text-neon-cyan transition"
             >
-              <Github className="size-4" /> GitHub
+              <Github className="size-4" />
+              <span>GitHub</span>
             </a>
           </div>
         </motion.div>
