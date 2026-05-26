@@ -69,17 +69,6 @@ const projects = [
     forks: 0,
     language: null,
   },
-  {
-    title: "Mulberry Max",
-    tagline: "Interactive Webpage",
-    description:
-      "A responsive JavaScript-based webpage project showcasing frontend development skills with interactive UI components.",
-    tags: ["JavaScript", "Frontend", "Web"],
-    github: "https://github.com/vvramana007/Mulberry_Max",
-    stars: 0,
-    forks: 0,
-    language: "JavaScript",
-  },
 ];
 
 const languageColors: Record<string, string> = {
