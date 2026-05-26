@@ -1,27 +1,17 @@
-import server from '../src/server';
+// Vercel Edge Function — re-exports the Cloudflare Worker bundle.
+// The worker uses Web standard Request/Response, which Edge runtime supports.
+// @ts-expect-error - bundled output, no types
+import worker from '../dist/server/index.js';
 
-export default async function handler(req: any, res: any) {
+export const config = {
+  runtime: 'edge',
+};
+
+export default async function handler(request: Request): Promise<Response> {
   try {
-    const protocol = req.headers['x-forwarded-proto'] || 'https';
-    const host = req.headers.host || 'localhost';
-    const url = new URL(req.url || '/', `${protocol}://${host}`);
-
-    const request = new Request(url, {
-      method: req.method,
-      headers: new Headers(req.headers as Record<string, string>),
-    });
-
-    const response = await server.fetch(request, {}, {});
-
-    res.status(response.status);
-    response.headers.forEach((value: string, key: string) => {
-      res.setHeader(key, value);
-    });
-
-    const body = await response.text();
-    res.send(body);
-  } catch (error) {
-    console.error('SSR Error:', error);
-    res.status(500).send('Internal Server Error');
+    return await worker.fetch(request, {}, {});
+  } catch (err) {
+    console.error('Edge handler error:', err);
+    return new Response('Internal Server Error', { status: 500 });
   }
 }
