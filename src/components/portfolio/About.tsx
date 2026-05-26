@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Brain, Cpu, Workflow, Cloud } from "lucide-react";
+import { Brain, LineChart, Workflow, Cloud } from "lucide-react";
 
 const highlights = [
   { icon: Brain, label: "Agentic AI" },
-  { icon: Cpu, label: "RAG Systems" },
-  { icon: Workflow, label: "Automation" },
-  { icon: Cloud, label: "Cloud-native" },
+  { icon: LineChart, label: "ML & Forecasting" },
+  { icon: Workflow, label: "RAG Pipelines" },
+  { icon: Cloud, label: "MLOps on Azure / AWS" },
 ];
 
 export function About() {
@@ -14,26 +14,40 @@ export function About() {
     <Section
       id="about"
       eyebrow="About"
-      title={<>Engineering <span className="gradient-text">intelligent systems</span></>}
+      title={<>Bridging <span className="gradient-text">AI</span> and <span className="gradient-text">ML</span> at scale</>}
     >
       <div className="grid md:grid-cols-5 gap-8 items-start">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="md:col-span-3 text-lg text-muted-foreground leading-relaxed"
+          className="md:col-span-3 space-y-4 text-lg text-muted-foreground leading-relaxed"
         >
-          I'm an AI & ML Engineer with{" "}
-          <span className="text-foreground font-medium">4+ years of experience</span>{" "}
-          building agentic AI systems, high-precision RAG pipelines, workflow
-          automation platforms, and scalable cloud-native AI solutions. I specialize in{" "}
-          <span className="text-foreground font-medium">
-            LangChain, LangGraph, Azure OpenAI, IBM watsonx, n8n automation, SAP + AI
-            integrations
-          </span>
-          , and production-ready AI systems.
-        </motion.p>
+          <p>
+            I'm an <span className="text-foreground font-medium">AI / ML Engineer with 4+ years</span>{" "}
+            of experience across the financial and logistics sectors. I specialize in{" "}
+            <span className="text-foreground font-medium">
+              agentic workflows, high-precision RAG architectures, and scalable ML pipelines
+            </span>
+            .
+          </p>
+          <p>
+            At <span className="text-foreground font-medium">Northern Trust</span>, I architect
+            multi-agent research systems on Azure OpenAI + LangGraph that cut institutional
+            analysis time by 65%. At <span className="text-foreground font-medium">TCS</span>, I
+            built forecasting and routing models (XGBoost, LSTM, Spark) that delivered 30%
+            operational savings.
+          </p>
+          <p className="text-base">
+            My toolkit spans{" "}
+            <span className="text-foreground">
+              LangGraph, Semantic Kernel, Azure OpenAI, Hugging Face, Databricks, Airflow,
+              FastAPI, Docker, Kubernetes, and MLflow
+            </span>
+            .
+          </p>
+        </motion.div>
 
         <div className="md:col-span-2 grid grid-cols-2 gap-3">
           {highlights.map((h, i) => (
@@ -43,6 +57,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
+              whileHover={{ y: -4 }}
               className="glass-card neon-border rounded-2xl p-4 flex flex-col gap-2"
             >
               <h.icon className="size-5 text-neon-cyan" />
