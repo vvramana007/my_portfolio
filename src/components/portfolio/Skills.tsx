@@ -1,32 +1,37 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Brain, Workflow, Cloud, Database, Building2 } from "lucide-react";
+import { Brain, Workflow, Cloud, Database, LineChart, Cpu } from "lucide-react";
 
 const groups = [
   {
-    title: "AI & GenAI",
+    title: "GenAI & LLMs",
     icon: Brain,
-    items: ["LangChain", "LangGraph", "OpenAI", "RAG", "Prompt Engineering", "Semantic Kernel"],
+    items: ["LangGraph", "LangChain", "Azure OpenAI", "Semantic Kernel", "RAG", "Prompt Eng.", "Hugging Face"],
   },
   {
-    title: "Automation",
-    icon: Workflow,
-    items: ["n8n", "APIs", "Workflow Automation", "AI Agents"],
+    title: "Machine Learning",
+    icon: LineChart,
+    items: ["XGBoost", "LSTM", "Prophet", "Scikit-learn", "Time-series", "Model Tuning"],
+  },
+  {
+    title: "Data Engineering",
+    icon: Database,
+    items: ["Apache Spark", "Databricks", "Airflow", "dbt", "Azure Data Factory", "SQL"],
+  },
+  {
+    title: "Vector & Retrieval",
+    icon: Cpu,
+    items: ["Azure AI Search", "FAISS", "Hybrid Search", "Hierarchical Chunking", "Embeddings"],
   },
   {
     title: "Cloud & MLOps",
     icon: Cloud,
-    items: ["Azure", "AWS", "Docker", "Kubernetes", "CI/CD"],
+    items: ["Azure ML", "AWS", "Docker", "Kubernetes", "FastAPI", "MLflow", "CI/CD"],
   },
   {
-    title: "Data & ML",
-    icon: Database,
-    items: ["Python", "FAISS", "Databricks", "Spark", "MLflow"],
-  },
-  {
-    title: "SAP + Enterprise",
-    icon: Building2,
-    items: ["SAP S/4HANA", "ABAP", "SAP BTP", "Enterprise Integration"],
+    title: "Automation",
+    icon: Workflow,
+    items: ["n8n", "REST APIs", "AI Agents", "Workflow Orchestration"],
   },
 ];
 
@@ -35,7 +40,7 @@ export function Skills() {
     <Section
       id="skills"
       eyebrow="Skills"
-      title={<>The <span className="gradient-text">stack</span> I ship with</>}
+      title={<>The full <span className="gradient-text">AI / ML</span> stack</>}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {groups.map((g, i) => (
@@ -44,7 +49,7 @@ export function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
+            transition={{ duration: 0.5, delay: i * 0.06 }}
             whileHover={{ y: -6 }}
             className="glass-card neon-border rounded-2xl p-6 group relative overflow-hidden"
           >
