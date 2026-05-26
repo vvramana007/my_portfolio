@@ -46,7 +46,10 @@ export function Hero() {
             <Sparkles className="size-3" /> Available for AI / ML roles
           </span>
           <h1 className="mt-5 text-4xl md:text-6xl font-bold leading-[1.05]">
-            Hi, I'm <span className="gradient-text">Venkata Ramana</span>
+            Hi, I'm{" "}
+            <span className="gradient-text block md:inline">
+              Venkata Ramana Veeraiahgari
+            </span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
             AI / ML Engineer building{" "}
